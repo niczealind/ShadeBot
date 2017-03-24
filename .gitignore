@@ -1,4 +1,0 @@
-ENV/
-__pycache__/
-.idea/
-.docker_env
