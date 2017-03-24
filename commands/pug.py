@@ -197,7 +197,7 @@ def get_char(name, server, target_region, api_key):
     return_string += '```CSS\n'  # start Markdown
 
     # iLvL
-    return_string += "Equipped Item Level: %s   Guild:%s \n" % (equipped_ivl, str(guild))
+    return_string += "Equipped Item Level: %s   Guild:%s \n" % (equipped_ivl, guild)
 
     # Artifact Level
     return_string += "Artifact Level: %s\n" % str(artifactlevel['Artifact Level'])
