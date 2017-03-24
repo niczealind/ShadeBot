@@ -226,7 +226,7 @@ def get_char(name, server, target_region, api_key):
                                                                            nh_progress["mythic"])
 
     # Gems
-    return_string += "Gems Equipped: %s/%s. %s gem/s are  bad\n" % (
+    return_string += "Gems Equipped: %s/%s. %s gem/s are bad\n" % (
         sockets["equipped_gems"], sockets["total_sockets"], sockets["shit_gems"])
 
     # Legendaries
