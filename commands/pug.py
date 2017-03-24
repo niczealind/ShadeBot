@@ -215,15 +215,16 @@ def get_char(name, server, target_region, api_key):
 
     # Artifact Level
     return_string += "Artifact Level: %s\n" % str(artifactlevel['Artifact Level'])
-    
+
     # Mythic Key Stone Master
     return_string += "Mythic Keystone Master: [%s] \n" % (mt_KM)
-	
+
     # Mythic Progression
     return_string += "Mythics: +2: %s, +5: %s, +10: %s, +15: %s\n" % (mythic_progress["plus_two"],
                                                              mythic_progress["plus_five"],
                                                              mythic_progress["plus_ten"],
                                                              mythic_progress["plus_fifteen"])
+
     #Ahead of the Curve
     return_string += "Ahead of the Curve Xavius: [%s] \n" % (en_AC)
     return_string += "Ahead of the Curve Helya: [%s] \n" % (tov_AC)
