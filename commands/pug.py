@@ -176,11 +176,11 @@ def get_char(name, server, target_region, api_key):
     en_AC ="N"
     tov_AC ="N"
     nh_AC ="N"
-    mt_KM ="N"
+ #   mt_KM ="N"
     guild = ""
 
-    if int(11162) in player_dict["achievements"]["achievementsCompleted"]:
-	mt_KM = "Y"
+#    if int(11162) in player_dict["achievements"]["achievementsCompleted"]:
+#	mt_KM = "Y"
     if int(11194) in player_dict["achievements"]["achievementsCompleted"]:
         en_AC = "Y"
     if int(11581) in player_dict["achievements"]["achievementsCompleted"]:
@@ -223,7 +223,7 @@ def get_char(name, server, target_region, api_key):
                                                              mythic_progress["plus_fifteen"])
 
     # Mythic Key Stone Master
-    return_string += "Mythic Keystone Master: [%s] \n" % (mt_KM)
+  #  return_string += "Mythic Keystone Master: [%s] \n" % (mt_KM)
 
     #Ahead of the Curve
     return_string += "Ahead of the Curve Xavius: [%s] \n" % (en_AC)
