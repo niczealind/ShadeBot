@@ -127,9 +127,10 @@ def get_mythic_progression(player_dictionary):
     plus_five = 0
     plus_ten = 0
     plus_fifteen = 0
-
+    myt_KM = "N"
+	
     if 11162 in achievements["achievementsCompleted"]:
-        plus_fifteen +=1
+        myt_KM ="Y"
 
     if 33096 in achievements["criteria"]:
         index = achievements["criteria"].index(33096)
@@ -215,6 +216,9 @@ def get_char(name, server, target_region, api_key):
     # Artifact Level
     return_string += "Artifact Level: %s\n" % str(artifactlevel['Artifact Level'])
     
+    # Mythic Key Stone Master
+    return_string += "Mythic Keystone Master: [%s] \n" % (myt_KM)
+	
     # Mythic Progression
     return_string += "Mythics: +2: %s, +5: %s, +10: %s, +15: %s\n" % (mythic_progress["plus_two"],
                                                              mythic_progress["plus_five"],
