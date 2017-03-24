@@ -176,10 +176,16 @@ def get_char(name, server, target_region, api_key):
     class_dict = json.loads(r.text)
     class_dict = {c['id']: c['name'] for c in class_dict["classes"]}
     equipped_ivl = player_dict["items"]["averageItemLevelEquipped"]
-    en_CE ="N"
+    en_AC ="N"
+    tov_AC ="N"
+    nh_AC ="N"
     guild = ""
-    if int(11191) in player_dict["achievements"]["achievementsCompleted"]:
-        en_CE = "Y"
+    if int(11194) in player_dict["achievements"]["achievementsCompleted"]:
+        en_AC = "Y"
+    if int(11581) in player_dict["achievements"]["achievementsCompleted"]:
+        tov_AC = "Y"
+    if int(11195) in player_dict["achievements"]["achievementsCompleted"]:
+        nh_AC = "Y"
     if "guild" in player_dict:
         guild = player_dict["guild"]["name"]
     sockets = get_sockets(player_dict)
@@ -214,8 +220,10 @@ def get_char(name, server, target_region, api_key):
                                                              mythic_progress["plus_five"],
                                                              mythic_progress["plus_ten"],
                                                              mythic_progress["plus_fifteen"])
-    #EN CE
-    return_string += "Emerald Nightmare Cutting Edge: [%s] \n" % (en_CE)
+    #Ahead of the Curve
+    return_string += "Ahead of the Curve Xavius: [%s] \n" % (en_AC)
+    return_string += "Ahead of the Curve Helya: [%s] \n" % (tov_AC)
+    return_string += "Ahead of the Curve Guldan: [%s] \n" % (nh_AC)
 
     # Raid Progression
     return_string += "EN: {1}/{0} (N), {2}/{0} (H), {3}/{0} (M)\n".format(en_progress["total_bosses"],
