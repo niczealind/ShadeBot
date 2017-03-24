@@ -180,7 +180,7 @@ def get_char(name, server, target_region, api_key):
     guild = ""
 
     if int(11162) in player_dict["achievements"]["achievementsCompleted"]:
-	mt_KM = "Y"	
+	mt_KM = "Y"
     if int(11194) in player_dict["achievements"]["achievementsCompleted"]:
         en_AC = "Y"
     if int(11581) in player_dict["achievements"]["achievementsCompleted"]:
