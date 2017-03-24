@@ -173,14 +173,11 @@ def get_char(name, server, target_region, api_key):
     class_dict = json.loads(r.text)
     class_dict = {c['id']: c['name'] for c in class_dict["classes"]}
     equipped_ivl = player_dict["items"]["averageItemLevelEquipped"]
-    mt_KM ="N"
     en_AC ="N"
     tov_AC ="N"
     nh_AC ="N"
     guild = ""
 
-    if int(11162) in player_dict["achievements"]["achievementsCompleted"]:
-	mt_KM = "Y"
     if int(11194) in player_dict["achievements"]["achievementsCompleted"]:
         en_AC = "Y"
     if int(11581) in player_dict["achievements"]["achievementsCompleted"]:
@@ -221,9 +218,6 @@ def get_char(name, server, target_region, api_key):
                                                              mythic_progress["plus_five"],
                                                              mythic_progress["plus_ten"],
                                                              mythic_progress["plus_fifteen"])
-
-    # Mythic Key Stone Master
-    return_string += "Mythic Keystone Master: [%s] \n" % (mt_KM)
 
     #Ahead of the Curve
     return_string += "Ahead of the Curve Xavius: [%s] \n" % (en_AC)
