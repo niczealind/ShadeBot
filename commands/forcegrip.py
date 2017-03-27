@@ -27,7 +27,8 @@ def get_message(name):
     return return_string
     
 async def forcegrip(client, message):
-    try:
         i = str(message.content).split(' ')
         name = i[1]
-        await client.send_message(message.channel, get_message(name))
+        fmessage = get_message(name)
+        await client.send_message(message.channel, fmessage)
+        
