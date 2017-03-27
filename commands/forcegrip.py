@@ -8,9 +8,6 @@ def get_roll(inp):
 def get_message(name):
     top = int(5)
     result = get_roll(top)
-    #return_string = ''
-    #return_string += 'Rolling 1 - %s \n' % top
-    #return_string += 'Result: %s' % result
 
     if (result == 1):
         return_string += "%s is picked up with Force Grip and tossed the edge!" % (name)
@@ -34,6 +31,3 @@ async def forcegrip(client, message):
         i = str(message.content).split(' ')
         name = i[1]
         await client.send_message(message.channel, get_message(name))
-    except Exception as e:
-        print(e)
-        await client.send_message(message.channel, "ERROR. Not a valid target")
