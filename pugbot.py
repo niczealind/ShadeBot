@@ -5,6 +5,7 @@ import discord
 
 # Commands #
 from commands.pug import pug
+from commands.forcegrip import forcegrip
 
 CLIENT = discord.Client()
 
@@ -39,6 +40,8 @@ async def on_message(message):
     if message.content.startswith('!pug'):
         await pug(CLIENT, DEFAULT_REGION, BLIZZARD_API_KEY, message)
 
+    if message.content.startswith('!forcegrip'):
+        await forcegrip(CLIENT, message)
 
 if __name__ == '__main__':
     BLIZZARD_API_KEY = config_value('blizzard_api_key')
