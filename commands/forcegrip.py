@@ -20,7 +20,7 @@ def get_message(name):
         return_string = "%s is picked up with Force Grip and then released!" % (name)
 
     if (result == 4):
-        return_string = "%s is picked up with Force Grip, BunkoJuice comes to their rescue!" % (name)
+        return_string = "%s is picked up with Force Grip, bunkojuice comes to their rescue!" % (name)
 
     if (result == 5):
         return_string = "Force Grip fails on %s!" % (name)
@@ -32,13 +32,13 @@ def get_message(name):
         return_string = "%s is tossed into the air with Force Grip then hit with Lightning!" % (name)
         
     if (result == 8):
-        return_string = "Force Grip fails on %s, is hit with Force Lighting instead!" % (name)
+        return_string = "Force Grip fails on %s, is hit with Force Lightning instead!" % (name)
         
     if (result == 9):
         return_string = "%s is Force Pulled into range then Force Gripped!" % (name)
         
     if (result == 10):
-        return_string = "%s is picked up with Force Grip, Force Drain proceeds to absord their energy!" % (name)
+        return_string = "%s is picked up with Force Grip, Drain Force proceeds to siphon %s energy!" % (name)
     
     return return_string
     
