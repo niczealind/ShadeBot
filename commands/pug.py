@@ -176,6 +176,7 @@ def get_char(name, server, target_region, api_key):
     en_AC ="N"
     tov_AC ="N"
     nh_AC ="N"
+	tos_AC ="N"
     guild = ""
 
     if int(11194) in player_dict["achievements"]["achievementsCompleted"]:
@@ -184,6 +185,8 @@ def get_char(name, server, target_region, api_key):
         tov_AC = "Y"
     if int(11195) in player_dict["achievements"]["achievementsCompleted"]:
         nh_AC = "Y"
+	If int(11874) in player_dict["achievements"]["achievementsCompleted"]:
+		tos_AC = "Y"
     if "guild" in player_dict:
         guild = player_dict["guild"]["name"]
     sockets = get_sockets(player_dict)
@@ -192,6 +195,7 @@ def get_char(name, server, target_region, api_key):
     tov_progress = get_raid_progression(player_dict, "Trial of Valor")
     en_progress = get_raid_progression(player_dict, "The Emerald Nightmare")
     nh_progress = get_raid_progression(player_dict, "The Nighthold")
+	tos_progress = get_raid_progression(player_dict, "Tomb of Sargeras")
     mythic_progress = get_mythic_progression(player_dict)
     artifactlevel = get_artilvl(player_dict)
 
@@ -223,6 +227,7 @@ def get_char(name, server, target_region, api_key):
     return_string += "Ahead of the Curve Xavius: [%s] \n" % (en_AC)
     return_string += "Ahead of the Curve Helya: [%s] \n" % (tov_AC)
     return_string += "Ahead of the Curve Guldan: [%s] \n" % (nh_AC)
+	return_string += "Ahead of the Curve Kil'jaeden: [%s] \n" % (tos_AC)
 
     # Raid Progression
     return_string += "EN: {1}/{0} (N), {2}/{0} (H), {3}/{0} (M)\n".format(en_progress["total_bosses"],
@@ -238,8 +243,12 @@ def get_char(name, server, target_region, api_key):
                                                                            nh_progress["normal"],
                                                                            nh_progress["heroic"],
                                                                            nh_progress["mythic"])
+    return_string += "TOS: {1}/{0} (N), {2}/{0} (H), {3}/{0} (M)\n".format(tos_progress["total_bosses"],
+                                                                           tos_progress["normal"],
+                                                                           tos_progress["heroic"],
+                                                                           tos_progress["mythic"])
 
-    # Gems
+# Gems
     return_string += "Gems Equipped: %s/%s. %s gem/s are bad\n" % (
         sockets["equipped_gems"], sockets["total_sockets"], sockets["shit_gems"])
 
