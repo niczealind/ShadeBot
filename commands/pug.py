@@ -186,7 +186,7 @@ def get_char(name, server, target_region, api_key):
     if int(11195) in player_dict["achievements"]["achievementsCompleted"]:
         nh_AC = "Y"
     if int(11874) in player_dict["achievements"]["achievementsCompleted"]:
-	tos_AC = "Y"
+        tos_AC = "Y"
     if "guild" in player_dict:
         guild = player_dict["guild"]["name"]
     sockets = get_sockets(player_dict)
