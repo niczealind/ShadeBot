@@ -32,15 +32,18 @@ async def on_ready():
 @CLIENT.event
 async def on_message(message):
 
-    if message.content.startswith('!info') or message.content.startswith('!help'):
+    if message.content.startswith('?info') or message.content.startswith('!help'):
         await CLIENT.send_message(message.channel, "I'm PugBot, the pug analyzer!\n"
                                                    "Use: !pug <name> <server> <region> \n"
                                                    "Example: !pug Basimot Lightbringer us")
 
-    if message.content.startswith('!pug'):
+    if message.content.startswith('?pug'):
         await pug(CLIENT, DEFAULT_REGION, BLIZZARD_API_KEY, message)
 
-    if message.content.startswith('!forcegrip'):
+    if message.content.startswith('?forcegrip'):
+        await forcegrip(CLIENT, message)
+        
+    if message.content.startswith('?hug'):
         await forcegrip(CLIENT, message)
 
 if __name__ == '__main__':
