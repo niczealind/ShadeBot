@@ -199,7 +199,7 @@ def get_char(name, server, target_region, api_key):
     en_progress = get_raid_progression(player_dict, "The Emerald Nightmare")
     nh_progress = get_raid_progression(player_dict, "The Nighthold")
     tos_progress = get_raid_progression(player_dict, "Tomb of Sargeras")
-    abt_progress = get_raid_progression(player_dict, "Argus, the Burning Throne")
+    abt_progress = get_raid_progression(player_dict, "Antorus, the Burning Throne")
     mythic_progress = get_mythic_progression(player_dict)
     artifactlevel = get_artilvl(player_dict)
 
