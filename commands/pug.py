@@ -289,5 +289,5 @@ async def pug(client, region, api_key, message):
     except Exception as e:
         print(e)
         await client.send_message(message.channel, "Error With Name or Server\n"
-                                                   "Use: !pug <name> <server> <region>\n"
+                                                   "Use: ?pug <name> <server> <region>\n"
                                                    "Hyphenate Two Word Servers (Ex: Twisting-Nether)")
