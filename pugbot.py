@@ -6,6 +6,7 @@ import discord
 # Commands #
 from commands.pug import pug
 from commands.forcegrip import forcegrip
+from commands.hug import hug
 
 CLIENT = discord.Client()
 
@@ -32,10 +33,10 @@ async def on_ready():
 @CLIENT.event
 async def on_message(message):
 
-    if message.content.startswith('?info') or message.content.startswith('!help'):
+    if message.content.startswith('?info') or message.content.startswith('?help'):
         await CLIENT.send_message(message.channel, "I'm PugBot, the pug analyzer!\n"
-                                                   "Use: !pug <name> <server> <region> \n"
-                                                   "Example: !pug Basimot Lightbringer us")
+                                                   "Use: ?pug <name> <server> <region> \n"
+                                                   "Example: ?pug Basimot Lightbringer us")
 
     if message.content.startswith('?pug'):
         await pug(CLIENT, DEFAULT_REGION, BLIZZARD_API_KEY, message)
@@ -44,7 +45,7 @@ async def on_message(message):
         await forcegrip(CLIENT, message)
         
     if message.content.startswith('?hug'):
-        await forcegrip(CLIENT, message)
+        await hug(CLIENT, message)
 
 if __name__ == '__main__':
     BLIZZARD_API_KEY = config_value('blizzard_api_key')
